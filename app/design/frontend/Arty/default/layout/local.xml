@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default translate="label" module="page">
+        <reference name="head">
+            <!--Adding Javascripts -->
+
+
+            <action method="addItem">
+                <script>lib/jquery/jquery-1.10.2.min.js</script>
+            </action>
+            <action method="addItem">
+                <script>lib/jquery/noconflict.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/modernizr.custom.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/selectivizr.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/matchMedia.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/matchMedia.addListener.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/enquire.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/app.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/jquery.cycle2.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/jquery.cycle2.swipe.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/slideshow.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/imagesloaded.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/minicart.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/configurableswatches/product-media.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/configurableswatches/swatches-product.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/bootstrap.min.js</name>
+            </action>
+
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/app.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.scripts.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.elevatezoom.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/html5shiv.js</name>
+                <params/>
+                <if>lt IE 9</if>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/respond.min.js</name>
+                <params/>
+                <if>lt IE 9</if>
+            </action>
+            <!-- Removing the styles.css -->
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
+            </action>
+            <!-- Adding Bootstrap Css -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <stylesheet>css/bootstrap.min.css</stylesheet>
+            </action>
+            <!-- Adding the styles.css -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <stylesheet>css/styles.css</stylesheet>
+            </action>
+        </reference>
+
+        <reference name="header">
+
+            <block type="cms/block" name="topbar_cmslinks" as="topbar_cmslinks">
+                <action method="setBlockId">
+                    <block_id>topbar_cmslinks</block_id>
+                </action>
+            </block>
+            <reference name="root">
+                <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
+            </reference>
+            <reference name="top.links">
+                <block type="checkout/links" name="checkout_cart_link">
+                    <action method="addCartLink"></action>
+                    <action method="addCheckoutLink"></action>
+                </block>
+
+            </reference>
+            <reference name="root">
+                <reference name="header">
+                    <action method="unsetChild">
+                        <name>topLinks</name>
+                    </action>
+                    <block type="page/template_links" name="top.links" as="topLinks"/>
+                </reference>
+                <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+
+                <block type="core/text_list" name="left_first" as="left_first" translate="label">
+                    <label>Left Column First (shows above main column on smaller screens)</label>
+                </block>
+
+                <block type="core/text_list" name="left" as="left" translate="label">
+                    <label>Left Column</label>
+                </block>
+
+                <block type="core/messages" name="global_messages" as="global_messages"/>
+                <block type="core/messages" name="messages" as="messages"/>
+
+                <block type="core/text_list" name="content" as="content" translate="label">
+                    <label>Main Content Area</label>
+                </block>
+
+                <block type="core/text_list" name="right" as="right" translate="label">
+                    <label>Right Column</label>
+                </block>
+            </reference>
+
+            <block type="checkout/cart_minicart" name="minicart_head" template="checkout/cart/minicart.phtml"
+                   before="-">
+                <block type="checkout/cart_sidebar" name="minicart_content"
+                       template="checkout/cart/minicart/items.phtml">
+                    <action method="addItemRender">
+                        <type>default</type>
+                        <block>checkout/cart_item_renderer</block>
+                        <template>checkout/cart/minicart/default.phtml</template>
+                    </action>
+                    <action method="addItemRender">
+                        <type>simple</type>
+                        <block>checkout/cart_item_renderer</block>
+                        <template>checkout/cart/minicart/default.phtml</template>
+                    </action>
+                    <action method="addItemRender">
+                        <type>grouped</type>
+                        <block>checkout/cart_item_renderer_grouped</block>
+                        <template>checkout/cart/minicart/default.phtml</template>
+                    </action>
+                    <action method="addItemRender">
+                        <type>configurable</type>
+                        <block>checkout/cart_item_renderer_configurable</block>
+                        <template>checkout/cart/minicart/default.phtml</template>
+                    </action>
+                    <block type="core/text_list" name="cart_sidebar.cart_promotion" as="cart_promotion"
+                           translate="label" module="checkout">
+                        <label>Mini-cart promotion block</label>
+                    </block>
+                    <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label"
+                           module="checkout">
+                        <label>Shopping Cart Sidebar Extra Actions</label>
+                    </block>
+                </block>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="catalog/List" name="product_list_my" template="catalog/product/category.phtml"/>
+            <block type="catalog/product_bestseller" template="catalog/product/bestseller.phtml"/>
+
+
+
+        </reference>
+
+        <reference name="footer">
+            <remove name="footer_links"/>
+            <remove name="footer_links2"/>
+            <block type="cms/block" name="footer-cmsLinks" as="footer-cmsLinks">
+                <action method="setBlockId">
+                    <block_id>footer-cmsLinks</block_id>
+                </action>
+            </block>
+            <block type="cms/block" name="footer-artycart" as="footer-artycart">
+                <action method="setBlockId">
+                    <block_id>footer-artycart</block_id>
+                </action>
+            </block>
+            <block type="cms/block" name="footer-social" as="footer-social">
+                <action method="setBlockId">
+                    <block_id>footer-social</block_id>
+                </action>
+            </block>
+            <block type="cms/block" name="footer-paymnet" as="footer-paymnet">
+                <action method="setBlockId">
+                    <block_id>footer-paymnet</block_id>
+                </action>
+            </block>
+            <block type="cms/block" name="cart_footer" as="cart_footer">
+                <action method="setBlockId">
+                    <block_id>cart_footer</block_id>
+                </action>
+            </block>
+        </reference>
+    </default>
+    <!--Handlers-->
+    <!--Category page Handlers-->
+    <PRODUCT_TYPE_configurable translate="label" module="catalog">
+        <reference name="product.info.options.wrapper">
+            <block type="catalog/product_view_type_configurable" name="product.info.options.configurable"
+                   as="options_configurable" before="-"
+                   template="catalog/product/view/type/options/configurable.phtml">
+                <block type="core/text_list" name="product.info.options.configurable.renderers"
+                       as="attr_renderers"/>
+                <block type="core/text_list" name="product.info.options.configurable.after" as="after"/>
+            </block>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js</script>
+            </action>
+        </reference>
+        <reference name="product.info.media">
+            <block type="core/text_list" name="product.info.media.after" as="after"/>
+        </reference>
+        <reference name="content">
+
+            <reference name="product.info">
+                <block type="catalog/product_view" name="catalog.product.crosssell" as="crosssell"
+                       template="catalog/product/view/crosssell.phtml"/>
+                <block type="catalog/product_list_related" name="catalog.product.related" as="related_products"
+                       template="catalog/product/list/related.phtml"/>
+                <block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products"
+                       template="catalog/product/list/upsell.phtml"/>
+                <block type="reports/product_widget_viewed" name="viewed.product"
+                       template="reports/widget/viewed/content/viewed_grid.phtml"></block>
+            </reference>
+
+
+            <action method="unsetChild">
+                <name>product.info.addtocart</name>
+            </action>
+
+
+            <action method="unsetChild">
+                <name>product.info.options.wrapper</name>
+            </action>
+            <reference name="product.info.options.wrapper">
+                <label>Info Column Options Wrapper</label>
+                <action method="unsetChild">
+                    <name>zipcode</name>
+                </action>
+                <block type="cms/block" name="zipcode" as="zipcode">
+                    <action method="setBlockId">
+                        <block_id>zipcode</block_id>
+                    </action>
+                </block>
+                <block type="core/template" name="options_js" template="catalog/product/view/options/js.phtml"/>
+                <block type="catalog/product_view_options" name="product.info.options" as="product_options"
+                       template="catalog/product/view/options.phtml">
+                    <action method="addOptionRenderer">
+                        <type>text</type>
+                        <block>catalog/product_view_options_type_text</block>
+                        <template>catalog/product/view/options/type/text.phtml</template>
+                    </action>
+                    <action method="addOptionRenderer">
+                        <type>file</type>
+                        <block>catalog/product_view_options_type_file</block>
+                        <template>catalog/product/view/options/type/file.phtml</template>
+                    </action>
+                    <action method="addOptionRenderer">
+                        <type>select</type>
+                        <block>arty_catalog/product_view_options_type_select</block>
+                        <template>catalog/product/view/options/type/select.phtml</template>
+                    </action>
+                    <action method="addOptionRenderer">
+                        <type>date</type>
+                        <block>catalog/product_view_options_type_date</block>
+                        <template>catalog/product/view/options/type/date.phtml</template>
+                    </action>
+                </block>
+                <block type="core/html_calendar" name="html_calendar" as="html_calendar"
+                       template="page/js/calendar.phtml"/>
+            </reference>
+
+
+        </reference>
+    </catalog_product_view>
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info.options.configurable">
+            <block type="core/text_list" name="product.info.options.configurable.renderers" as="attr_renderers">
+                <block type="configurableswatches/catalog_product_view_type_configurable_swatches"
+                       template="configurableswatches/catalog/product/view/type/options/configurable/swatches.phtml"/>
+            </block>
+            <block type="core/text_list" name="product.info.options.configurable.after" as="after">
+                <block type="core/template"
+                       template="configurableswatches/catalog/product/view/type/configurable/swatch-js.phtml"/>
+            </block>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+
+    <catalog_category_default translate="label">
+        <label>Catalog Category (Non-Anchor)</label>
+        <reference name="left_first">
+            <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml">
+                <block type="core/text_list" name="catalog.leftnav.state.renderers" as="state_renderers" />
+            </block>
+        </reference>
+        <reference name="left">
+
+            <action method="unsetChild">
+                <name>catalog.leftnav</name>
+            </action>
+            <action method="insert">
+                <child>catalog.leftnav</child>
+            </action>
+        </reference>
+        <reference name="content">
+            <action method="unsetChild">
+                <name>category.products</name>
+            </action>
+            <action method="insert">
+                <child>category.products</child>
+            </action>
+
+
+        </reference>
+    </catalog_category_default>
+
+
+    <catalog_category_layered translate="label">
+        <label>Catalog Category (Anchor)</label>
+
+        <reference name="left">
+
+            <action method="unsetChild">
+                <name>catalog.leftnav</name>
+            </action>
+            <action method="insert">
+                <child>catalog.leftnav</child>
+            </action>
+        </reference>
+        <reference name="content">
+            <action method="unsetChild">
+                <name>category.products</name>
+            </action>
+
+            <action method="insert">
+                <child>category.products</child>
+            </action>
+
+
+        </reference>
+    </catalog_category_layered>
+    <!--<catalog_category_layered>
+        <reference name="content">
+            <action method="unsetChild">
+                <name>catalog.leftnav</name>
+            </action>
+        </reference>
+        <reference name="content">
+            <action method="insert">
+                <child>catalog.leftnav</child>
+            </action>
+        </reference>
+    </catalog_category_layered>-->
+    <!--End of Category Page handler -->
+    <!--checkout Page Handlers-->
+
+    <checkout_onepage_index>
+        <reference name="content">
+
+            <reference name="checkout.onepage">
+                <block type="checkout/onepage_login" name="checkout.onepage.login" as="login"
+                       template="checkout/onepage/login.phtml">
+                    <block type="page/html_wrapper" name="checkout.onepage.login.before" as="login_before"
+                           translate="label">
+                        <label>Login/Registration Before</label>
+                        <action method="setMayBeInvisible">
+                            <value>1</value>
+                        </action>
+                    </block>
+                </block>
+                <block type="checkout/onepage_billing" name="checkout.onepage.billing" as="billing"
+                       template="checkout/onepage/billing.phtml"/>
+                <block type="checkout/onepage_shipping" name="checkout.onepage.shipping" as="shipping"
+                       template="checkout/onepage/shipping.phtml"/>
+                <block type="checkout/onepage_shipping_method" name="checkout.onepage.shipping_method"
+                       as="shipping_method"
+                       template="checkout/onepage/shipping_method.phtml">
+                    <block type="checkout/onepage_shipping_method_available"
+                           name="checkout.onepage.shipping_method.available" as="available"
+                           template="checkout/onepage/shipping_method/available.phtml"/>
+                    <block type="checkout/onepage_shipping_method_additional"
+                           name="checkout.onepage.shipping_method.additional" as="additional"
+                           template="checkout/onepage/shipping_method/additional.phtml"/>
+                </block>
+                <block type="checkout/onepage_review" name="checkout.onepage.review" as="review"
+                       template="checkout/onepage/review.phtml"/>
+                <block type="checkout/onepage_payment" name="checkout.onepage.payment" as="payment"
+                       template="checkout/onepage/payment.phtml">
+                    <block type="checkout/onepage_payment_methods" name="checkout.payment.methods" as="methods"
+                           template="checkout/onepage/payment/info.phtml">
+                        <action method="setMethodFormTemplate">
+                            <method>purchaseorder</method>
+                            <template>payment/form/purchaseorder.phtml</template>
+                        </action>
+                    </block>
+                </block>
+
+            </reference>
+
+        </reference>
+
+    </checkout_onepage_index>
+
+
+    <checkout_cart_index translate="label">
+        <reference name="checkout.cart">
+            <action method="setCartTemplate">
+                <value>checkout/cart.phtml</value>
+            </action>
+            <action method="addItemRender">
+                <type>simple</type>
+                <block>checkout/cart_item_renderer</block>
+                <template>checkout/cart/item/default.phtml</template>
+            </action>
+            <action method="addItemRender">
+                <type>grouped</type>
+                <block>checkout/cart_item_renderer_grouped</block>
+                <template>checkout/cart/item/default.phtml</template>
+            </action>
+            <action method="addItemRender">
+                <type>configurable</type>
+                <block>checkout/cart_item_renderer_configurable</block>
+                <template>checkout/cart/item/default.phtml</template>
+            </action>
+        </reference>
+        <reference name="footer">
+            <action method="setTemplate">
+                <template>page/html/cart-footer.phtml</template>
+            </action>
+        </reference>
+    </checkout_cart_index>
+
+
+    <!--End of checkout Page Handlers-->
+
+
+
+    <!--Customer Page Handlers-->
+
+    <review_product_list>
+
+        <reference name="product.review.form">
+            <block type="captcha/captcha" name="recaptcha">
+                <action method="setFormId">
+                    <formId>user_review</formId>
+                </action>
+                <action method="setImgWidth">
+                    <width>230</width>
+                </action>
+                <action method="setImgHeight">
+                    <width>50</width>
+                </action>
+            </block>
+        </reference>
+    </review_product_list>
+
+
+
+    <!--End of Customer Page Handlers-->
+
+    <!-- registration block (sneha) -->
+
+
+
+    <catalogsearch_result_index translate="label">
+        <label>Quick Search Form</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <remove>left_first</remove>
+
+        <reference name="content">
+            <action method="unsetChild">
+                <name>search.result</name>
+            </action>
+            <action method="insert">
+                <child>search.result</child>
+            </action>
+
+        </reference>
+    </catalogsearch_result_index>
+
+
+</layout>
