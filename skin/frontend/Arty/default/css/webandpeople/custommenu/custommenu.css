@@ -1,11 +1,12 @@
 #custommenu {
     position: relative;
     font-size: 12px;
-    padding: 0px 0px 0px 0px;
-    width: 100%;
+    padding: 0px 0px 0px 0;
+    width: 130%;
     border-radius: 2px;
     height: auto;
     margin: 0 auto;
+    text-align: center;
 }
 /*IE7 fix*/
 *:first-child+html #custommenu {
@@ -253,12 +254,14 @@ html[xmlns] #menu-button, html[xmlns] .parentMenu {
     z-index: 999;
 }
 #menu-button {
+
     float: none;
     padding: 10px 0px 10px 0px;
     margin: 0px 0px 0px 0px;
-    width: 100%;
-    border-bottom: 1px solid #fff;
+
+    border-bottom: 1px solid black;
     text-transform: uppercase;
+    text-align: center;
 }
 #menu-button a:link, #menu-button a:visited {
     color: #fff;
@@ -347,12 +350,16 @@ html[xmlns] #menu-button, html[xmlns] .parentMenu {
 }
 .parentMenu {
     position: relative;
+    border-right: 1px solid lightgrey ;
+    padding: 0 10px 0 10px;
 }
 .parentMenu a {
     display: block;
 }
 #menu-button {
     cursor: pointer;
+    width:100%;
+    background: lightgrey;
 }
 .menu-mobile div.level2 {
     margin-bottom: 0;

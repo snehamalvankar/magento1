@@ -7645,6 +7645,10 @@ a {
   }
 }
 /* product widget list header */
+.anchorA {
+  color: #DF3D5C;
+}
+
 .subheader, .firstH, .secondH, .thirdH, .fourthH, .fifthH, .sixthH {
   font-size: 4vmin;
   color: #5B5B5B;
@@ -7685,12 +7689,12 @@ a {
 }
 
 .subcontent {
-  height: 600px;
+  height: 80%;
 }
 
 .sub-padding {
-  padding: 10px 0em 0em 0.5em;
-  margin: 0em 0em 0em 0em;
+  padding: 10px 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .subpadding {
@@ -7973,7 +7977,6 @@ a {
 /** End modal css*/
 /** MinI Login Css */
 .login-textbox {
-  box-shadow: 0px 0px 2px 0px orange;
   border: solid orange 1px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7985,6 +7988,7 @@ a {
   background: orange;
   color: White;
   border: 0 none;
+  margin-top: 3%;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -8003,7 +8007,7 @@ a {
 .Login-header {
   height: 50px;
   font-size: 25px;
-  color: lightgrey;
+  color: #c8c3c4;
 }
 
 .row-height {
@@ -8013,7 +8017,7 @@ a {
 /** My Account Navigation **/
 .block-account ul {
   border: solid 1px black;
-  margin: 5px 0 5px 18%;
+  margin: 5px 5px 5px;
 }
 
 .block-account ul li {
@@ -8168,6 +8172,7 @@ select {
 .minicart-wrapper {
   clear: both;
   width: 90%;
+  padding-left: 2%;
 }
 
 /* .minicart-wrapper:after {
@@ -9943,6 +9948,7 @@ Merging code Sneha's Code
   margin-top: 4px;
   width: 365px;
   max-width: 100%;
+  border: 2px solid orange;
 }
 
 .form-list .input-range .input-text {
@@ -10481,6 +10487,10 @@ form .form-instructions {
     margin-bottom: 1em;
   }
 }
+.page-header {
+  border: none;
+}
+
 /* header rwd changes */
 @media only screen and (min-width: 771px) {
   .page-header {
@@ -10493,7 +10503,7 @@ form .form-instructions {
   .page-headerf {
     background: white;
     max-width: 1680px;
-    height: 100px;
+    height: 130px;
     margin: 0 0;
     padding: 0 0;
     background-image: url("../images/smallHeader.png");
@@ -10614,6 +10624,7 @@ form .form-instructions {
   min-height: 44px;
   text-align: center;
   padding: 10px;
+  margin-top: 2%;
 }
 
 .logof img {
@@ -10636,6 +10647,7 @@ form .form-instructions {
   .logo {
     max-width: 250px;
     min-height: 90px;
+    margin-top: 2%;
   }
 
   .logof {
@@ -10677,6 +10689,7 @@ form .form-instructions {
 @media only screen and (max-width: 768px) {
   .skip-links {
     width: 30%;
+    display: none;
   }
 }
 /* -------------------------------------------- *
@@ -11051,7 +11064,7 @@ a.skip-link {
   background-position: 4px -146px;
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1680px) {
   .skip-search {
     display: none;
   }
@@ -11063,7 +11076,7 @@ a.skip-link {
   padding: 20px;
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1680px) {
   #header-search {
     display: block;
     position: absolute;
@@ -12371,9 +12384,9 @@ a.skip-link {
   padding-left: 4%;
 }
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 420px) {
   .xsimage {
-    padding-left: 10%;
+    padding-left: 12%;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -12415,7 +12428,7 @@ a.skip-link {
   }
 }
 .widthgendr {
-  width: 135px;
+  width: 145px;
 }
 
 @media only screen and (max-width: 413px) {
@@ -12464,6 +12477,13 @@ a.skip-link {
   height: 100%;
 }
 
+.greyC:hover {
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  top: 0;
+}
+
 figure {
   margin: 0;
   padding: 0;
@@ -12503,6 +12523,28 @@ figcaption {
   transition-delay: .5s;
 }
 
+@media (max-width: 991px) and (min-width: 771px) {
+  .figcaptionx {
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    filter: alpha(opacity=0);
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 82%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-transition-delay: .5s;
+    -moz-transition-delay: .5s;
+    -o-transition-delay: .5s;
+    -ms-transition-delay: .5s;
+    transition-delay: .5s;
+  }
+}
 figcaption h3 {
   font-size: 30px;
   color: #f3b204;
@@ -12636,3 +12678,250 @@ figcaption a:hover {
 /*.hotsell:hover{
   border: 1px solid orangered;
 }*/
+/*3-3-16*/
+.addresspd {
+  padding-left: 20%;
+}
+
+@media only screen and (max-width: 1199px) {
+  .mdaddresspd {
+    padding-left: 20%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .xsaddresspd {
+    padding-left: 21%;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .xxsaddresspd {
+    padding-left: 27%;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .xxsmlchngpwd {
+    font-size: 10px;
+  }
+}
+.addresssppaddng {
+  padding-left: 5%;
+}
+
+.hmpggrid {
+  margin-bottom: 0;
+  height: 50%;
+}
+
+@media (max-width: 991px) and (min-width: 767px) {
+  figure {
+    border: solid red;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 95%;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    border: 3px solid #fff;
+  }
+}
+/* 4-3-16*/
+.headerimg {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 991px) and (min-width: 767px) {
+  .rightH {
+    float: right;
+  }
+}
+@media only screen and (max-width: 766px) {
+  #header-cart.skip-active {
+    border: 1px solid #CCC;
+    display: block;
+    position: absolute;
+    z-index: 200;
+    top: 40px;
+    left: 15px;
+    width: 320px;
+    border: 1px solid lightgrey;
+    background: #FFF;
+  }
+}
+@media (max-width: 917px) and (min-width: 838px) {
+  #header-search {
+    margin-top: 0;
+  }
+}
+@media (max-width: 837px) and (min-width: 771px) {
+  #header-search {
+    margin-top: 0;
+  }
+}
+.marginTopC {
+  margin-top: 1%;
+}
+
+.marginAcc {
+  margin-top: 0.5%;
+}
+
+.Ccheader {
+  color: black;
+}
+
+.CcSubheader {
+  color: #FF8C00;
+}
+
+.AccC {
+  margin-top: 4.5%;
+}
+
+.PAccC {
+  margin-top: 3%;
+}
+
+@media only screen and (max-width: 991px) {
+  .AccC {
+    margin-top: 7.5%;
+  }
+}
+.wishlistbtn {
+  margin-right: 2%;
+}
+
+/* 9-3-16*/
+@media only screen and (max-width: 467px) {
+  .xstextbx1 {
+    width: 20%;
+  }
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container:before, .container:after {
+  content: " ";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 980px;
+  }
+}
+.navfx {
+  top: 20px;
+  width: 50%;
+  margin-left: 250px;
+}
+
+.navd {
+  margin-bottom: 2%;
+  margin-left: 10%;
+  width: 80%;
+  font-size: 12px;
+}
+
+@media (max-width: 771px) {
+  .xsnav {
+    margin-left: 35%;
+    width: 100%;
+  }
+
+  .navfx {
+    margin-top: 14.5%;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+.Accmargindb {
+  margin-bottom: 2%;
+}
+
+input {
+  outline: none;
+  text-indent: 5px;
+}
+
+select {
+  outline: none;
+}
+
+@media (min-width: 1199px) {
+  .topslrr {
+    text-align: right;
+  }
+}
+.page-headerLg {
+  background: white;
+  max-width: 1680px;
+  height: 10%;
+  margin: 0 0;
+  padding: 0 0;
+  background-image: url("../images/smallHeader.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 80% 5%;
+}
+
+.padding-bottomHd {
+  padding-bottom: 2%;
+}
+
+.signupH {
+  margin-left: 3%;
+}
+
+.reglgF {
+  color: #c8c3c4;
+}
+
+@media (min-width: 992px) {
+  .line {
+    border-right: 1px solid black;
+  }
+
+  .textH {
+    padding-top: 2%;
+    text-align: right;
+    padding-right: 2%;
+  }
+}
+@media (max-width: 1198px) and (min-width: 992px) {
+  .mdtextH {
+    text-align: left;
+    padding-left: 2%;
+  }
+}
+.Hpaddnglft {
+  padding-left: 2%;
+}
+
+.disp {
+  display: none;
+}
+
+.disps {
+  display: block;
+}

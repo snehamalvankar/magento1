@@ -33,7 +33,7 @@
 $div = 1; ?>
 <?php if (count($_categories) > 0): ?>
 
-    <div class="container  ">
+    <div class="  ">
 
         <?php foreach ($_categories as $_category): ?>
 
@@ -49,8 +49,18 @@ $div = 1; ?>
             } elseif ($I == 4) {
                 echo 'fourthH';
             } elseif ($I == 5) {
-                echo 'fifthH';
-            } else {
+                echo 'thirdH';
+            }
+            elseif ($I == 6) {
+                echo 'firstH';
+            }
+            elseif ($I == 7) {
+                echo 'secondH';
+            }
+            elseif ($I == 8 ) {
+                echo 'thirdH';
+            }
+            else {
                 echo 'sixthH';
             }
 
@@ -68,7 +78,7 @@ $div = 1; ?>
                 </a>
             </div>
 
-            <div class="row subcontent">
+            <div class="row subcontent hmpggrid">
 
                 <?php $i = 1;
                 foreach ($products as $product): ?>
@@ -79,7 +89,7 @@ $div = 1; ?>
                             echo "pull-left";} ?>">
                             <a href="<?php echo $product->getProductUrl() ?>">
 
-                                <figure>
+                                <figure >
                                     <img class=" lightborder img img-responsive imgF " style="border:solid black"
                                          src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(600) ?>"
                                          alt="<?php echo $this->stripTags($product->getName(), null, true) ?>"/>

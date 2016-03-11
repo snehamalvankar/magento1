@@ -25,12 +25,14 @@
  */
 ?>
 
+<div class="AccC" >
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 <?php $_orders = $this->getOrders(); ?>
-<div class="page-title">
-    <h1><?php echo $this->__('My Orders') ?></h1>
-</div>
-<?php echo $this->getPagerHtml(); ?>
+    <div class="block-title text-left" >
+        <h4 class="CcSubheader"><strong><?php echo $this->__('My Orders'); ?></strong></h4>
+    </div>
+    <div class=" hotsell " >
+
 <?php if ($_orders->getSize()): ?>
 
     <div class="lightborder">
@@ -40,9 +42,9 @@
         <div class="personal-info " >
 
 
-                    <label><?php echo $this->__('Date : ') ?></label><?php echo  $this->formatDate($_order->getCreatedAtStoreDate()) ?>
+                    <label class="paddngLeft"><?php echo $this->__('Date : ') ?></label><?php echo  $this->formatDate($_order->getCreatedAtStoreDate()) ?>
 
-                    <label><?php echo $this->__('Order #') ?></label><?php echo  " ".$_order->getRealOrderId() ?>
+                    <label class="paddngLeft"><?php echo $this->__('Order #') ?></label><?php echo  " ".$_order->getRealOrderId() ?>
 
 
                 <div class="row">
@@ -79,12 +81,12 @@
                                         src="<?php echo Mage::helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>"
                                         width="100" height="100" alt="" style="display: inline-block"/>
 
-
+                                    <li class="list-unstyled text-center xssalesorder">
                                     <?php
 
                                     echo $product_name = $item->getName();
                                     //  echo $product_id = $item->product_id ;
-                                    ?>
+                                    ?></li>
                                 </div>
 
                                 <!-- product quantity -->
@@ -150,6 +152,7 @@
     <script type="text/javascript">decorateTable('my-orders-table');</script>
 
 <?php else: ?>
-    <p><?php echo $this->__('You have placed no orders.'); ?></p>
+    <p class="paddngLeft"><?php echo $this->__('You have placed no orders.'); ?></p>
 <?php endif ?>
-<?php echo $this->getPagerHtml(); ?>
+    </div>
+</div>
