@@ -7374,7 +7374,7 @@ p.product-name {
 
 .products-grid .product-info {
   position: relative;
-  padding-bottom: 95px; }
+  padding-bottom: 10px; }
 
 .products-grid .actions {
   padding-top: 10px;
@@ -9354,19 +9354,19 @@ a.skip-link {
   border-left: 40px solid transparent; }
 
 .addtocart {
-  background: url(../images/adc.png);
+  background: url(../images/atcp.png);
   background-repeat: no-repeat;
   width: 100%;
-  height: 40px;
+  height: 25px;
   border: 0;
   opacity: 1;
   outline: none; }
 
 .buynw {
-  background: url(../images/buynow.png);
+  background: url(../images/buyP.png);
   background-repeat: no-repeat;
   width: 100%;
-  height: 40px;
+  height: 25px;
   border: 0;
   outline: none; }
 
@@ -9470,7 +9470,7 @@ a.skip-link {
 /** 16-02-2016 **/
 .checkoutbtn {
   background-color: peachpuff;
-  width: 180px; }
+  width: 130px; }
 
 #fade {
   display: none;
@@ -9504,6 +9504,7 @@ a.skip-link {
   background: url(../images/Frst.png);
   background-repeat: no-repeat;
   padding-left: 13%;
+  margin-left: 3%;
   border: 0;
   height: 40px; }
 
@@ -10260,7 +10261,7 @@ figcaption a:hover {
   color: #FF8C00; }
 
 .AccC {
-  margin-top: 4.5%; }
+  margin-top: 3.8%; }
 
 .PAccC {
   margin-top: 3%; }
@@ -10350,6 +10351,16 @@ select {
 .reglgF {
   color: #c8c3c4; }
 
+.blackColor {
+  color: black; }
+
+.blackColor:hover {
+  text-display: none;
+  color: #9c9999; }
+
+.ColorShdR {
+  color: #cc4e5c; }
+
 @media (min-width: 992px) {
   .line {
     border-right: 1px solid black; }
@@ -10370,5 +10381,165 @@ select {
 
 .disps {
   display: block; }
+
+/*11-3-16-*/
+.backgrndCat {
+  background-color: lightgrey; }
+
+.catanchor {
+  color: #9c9999; }
+
+.catanchor:hover {
+  color: black;
+  text-decoration: none; }
+
+.subcatprod {
+  margin: 2px 0px 1px 0px; }
+
+.paddingLeftCrt {
+  padding-left: 3%; }
+
+.paddingRight {
+  padding-right: 2%; }
+
+.page-header {
+  margin: 0 0 0 0; }
+
+.cartShpmr {
+  width: 130px;
+  background-color: lightgrey;
+  outline: none; }
+
+@media (min-width: 1199px) {
+  .paddnlft {
+    padding-left: 3%; } }
+@media (max-width: 1198px) and (min-width: 990px) {
+  .paddnlft {
+    padding-left: 0; } }
+@media (max-width: 991px) {
+  .paddnlft {
+    padding-left: 3%; } }
+.wellpdmg {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px; }
+
+.statusW {
+  width: 175px; }
+
+.dobpd {
+  padding-left: 15px; }
+
+.font-colorHD {
+  color: white; }
+
+.calendar {
+  border: 1px solid #CCC; }
+
+.calendar tbody .disabled {
+  /*border:1px solid #DDD;*/ }
+
+.calendar tbody .disabled {
+  color: #666;
+  opacity: 0.5;
+  background: #FCFCFC none repeat scroll 0% 0%; }
+
+.calendar table {
+  background: #F5F5F5 none repeat scroll 0% 0%;
+  border: none; }
+
+.calendar .button {
+  border-color: #FFF #FFF #FFF #FFF; }
+
+.calendar thead .title {
+  color: #666;
+  background: #F5F5F5 none repeat scroll 0% 0%;
+  border: none; }
+
+.calendar tfoot .ttip {
+  color: #666;
+  background: #F5F5F5 none repeat scroll 0% 0%;
+  border: none; }
+
+.calendar thead .name {
+  background: #F5F5F5 none repeat scroll 0% 0%;
+  font-weight: bold;
+  border: none; }
+
+.calendar thead .hilite {
+  background: #E5E5E5 none repeat scroll 0% 0%;
+  border-color: #FFF #DDD #DDD #FFF;
+  border-width: 2px;
+  border-style: solid; }
+
+.calendar table .wn {
+  border-right: 1px solid #FFF;
+  background-color: #F4F0E8 none repeat scroll 0% 0%; }
+
+.calendar td.time {
+  border-top: 1px solid #FFF;
+  background-color: #F5F5F5; }
+
+.calendar tbody .day {
+  border: 1px solid #FFF; }
+
+.calendar tbody td.selected {
+  border-color: #FFF #BBB #BBB #FFF; }
+
+.calendar tbody td.hilite {
+  border-color: #FFF #BBB #BBB #FFF;
+  border-width: 2px; }
+
+.calendar .nav {
+  background: none;
+  vertical-align: middle; }
+
+.bss-delivery-date #advice-required-entry-shipping_arrival_date_display {
+  position: absolute;
+  max-width: 130px; }
+
+#shipping-method-buttons-container {
+  margin-top: 5px !important; }
+
+.calendar thead .calendar-title {
+  border-color: #FFF;
+  background: #F5F5F5 none repeat scroll 0% 0%;
+  color: #666;
+  border: none; }
+
+.calendar td.button {
+  background-color: #F5F5F5;
+  border: none;
+  padding: 3px; }
+
+.calendar td.button div {
+  font-size: 14px; }
+
+.calendar td.button div:first-child {
+  font-size: 13px; }
+
+.calendar table td.wn {
+  border-left: 1px solid #CCC; }
+
+.calendar thead .weekend {
+  color: #000; }
+
+.shareThis {
+  background: url(../images/share.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 25px;
+  border: 0;
+  opacity: 1;
+  outline: none; }
+
+.sharethis1 {
+  background: none;
+  margin-right: 4%;
+  border: none;
+  outline: none; }
+
+.btn2 {
+  border-right: 1px solid black;
+  width: 40%; }
 
 /*# sourceMappingURL=styles.css.map */

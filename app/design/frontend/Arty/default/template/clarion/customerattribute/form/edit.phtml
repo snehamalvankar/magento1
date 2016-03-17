@@ -27,7 +27,7 @@
             <li class="fields">
                 <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())->toHtml() ?>
             </li>
-            <li class="marginbottom">
+            <li class="marginbottom rowspan">
                 <label for="email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
                 <div class="input-box">
                     <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="themeborder input-text required-entry validate-email" />
@@ -95,7 +95,7 @@
                                        <textarea class="themeborder textarea <?php echo $fieldRequiredClass; ?> <?php echo $fieldFrontendClass ;?>" cols="15" rows="2" title="<?php echo $this->__($frontEndLabel); ?>" name="<?php echo $attribute->getAttributeCode(); ?>" id="<?php echo $attribute->getAttributeCode(); ?>"><?php echo $fieldValue; ?></textarea>
                                      
                                    <?php elseif($attribute->getFrontendInput()== 'date'):?>
-                                    <input type="text" style="width:110px !important;" class="themeborder input-text <?php echo $fieldRequiredClass; ?> " title="<?php echo $this->__($frontEndLabel); ?>" value="<?php echo $this->helper('clarion_customerattribute/customerattribute')->getFormattedDate($fieldValue); ?>" id="<?php echo $attribute->getAttributeCode(); ?>" name="<?php echo $attribute->getAttributeCode(); ?>">
+                                    <input type="text"  class="themeborder statusW input-text <?php echo $fieldRequiredClass; ?> " title="<?php echo $this->__($frontEndLabel); ?>" value="<?php echo $this->helper('clarion_customerattribute/customerattribute')->getFormattedDate($fieldValue); ?>" id="<?php echo $attribute->getAttributeCode(); ?>" name="<?php echo $attribute->getAttributeCode(); ?>">
                                     <img style="" title="Select Date" id="<?php echo $attribute->getAttributeCode(); ?>_trig" class="v-middle" alt="" src="<?php echo $this->getSkinUrl('images/clarion/customerattribute/grid-cal.gif') ?>">
                                         <script type="text/javascript">
                                         //&lt;![CDATA[
@@ -119,7 +119,7 @@
                                     </select>
                                         
                                     <?php elseif($attribute->getFrontendInput()== 'select'):?>
-                                    <select class="themeborder" id="<?php echo $attribute->getAttributeCode(); ?>" name="<?php echo $attribute->getAttributeCode(); ?>" title="<?php echo $this->__($frontEndLabel); ?>"<?php if ($attribute->getIsRequired()):?> class=" themeborder validate-select required-entry "<?php endif; ?>>
+                                    <select class="themeborder statusW" id="<?php echo $attribute->getAttributeCode(); ?>" name="<?php echo $attribute->getAttributeCode(); ?>" title="<?php echo $this->__($frontEndLabel); ?>"<?php if ($attribute->getIsRequired()):?> class=" themeborder validate-select required-entry "<?php endif; ?>>
                                         <?php $options = Mage::getResourceSingleton('customer/customer')->getAttribute($attribute->getAttributeCode())->getSource()->getAllOptions();?>
                                         <?php foreach ($options as $option):?>
                                             <option value="<?php echo $option['value'] ?>"<?php if ($option['value'] == $fieldValue) echo ' selected="selected"' ?>><?php echo $option['label'] ?></option>
@@ -127,7 +127,7 @@
                                     </select>
                                         
                                     <?php elseif($attribute->getFrontendInput()== 'multiselect'):?>
-                                    <select class="themeborder" multiple="multiple" size="5" id="<?php echo $attribute->getAttributeCode(); ?>" name="<?php echo $attribute->getAttributeCode(); ?>[]" title="<?php echo $this->__($frontEndLabel); ?>"  class="themeborder multiselect <?php if ($attribute->getIsRequired()):?> validate-select required-entry<?php endif; ?> ">
+                                    <select  class="themeborder " multiple="multiple" size="5" id="<?php echo $attribute->getAttributeCode(); ?>" name="<?php echo $attribute->getAttributeCode(); ?>[]" title="<?php echo $this->__($frontEndLabel); ?>"  class="themeborder multiselect <?php if ($attribute->getIsRequired()):?> validate-select required-entry<?php endif; ?> ">
                                         <?php $options = Mage::getResourceSingleton('customer/customer')->getAttribute($attribute->getAttributeCode())->getSource()->getAllOptions();?>
                                         <?php foreach ($options as $option):?>
                                             <option value="<?php echo $option['value'] ?>"<?php if (in_array($option['value'], explode(',', $fieldValue))) echo ' selected="selected"' ?>><?php echo $option['label'] ?></option>

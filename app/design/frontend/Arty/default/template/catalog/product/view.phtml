@@ -39,8 +39,8 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="product-view ">
-    <div class="product-essential ">
+
+
         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post"
               id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
             <input type="hidden" name="buy_now" id="buy_now" value=""/>
@@ -76,9 +76,11 @@
 
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" >
-                                    <a>
-                                    <?php // $_vendor = Mage::helper('udropship')->getVendor($_product->getUdropshipVendor())->getFileUrl('propic') ?>
-                                   <!-- <img class="img img-responsive" src="<?php // echo $_vendor; ?>" style=" width:80 ; height: 80;"/> -->
+                                    <a href="<?php // echo
+                                    // Mage::helper('umicrosite')->getVendorBaseUrl($_product->getUdropshipVendor()) ?>">
+                                        <?php // $_vendor = Mage::helper('udropship')->getVendor($_product->getUdropshipVendor())->getFileUrl('propic') ?>
+                                        <img class="img img-responsive" src="<?php // echo $_vendor; ?>" width="100"
+                                             height="100"/>
                                     </a>
                                 </div>
                             </div>
@@ -252,7 +254,7 @@
 
                 <?php $_item = Mage::getModel('catalog/product')->load($_item->getId()); ?>
 
-                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 "> <!-- item-->
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 rowspan"> <!-- item-->
                     <a href="<?php echo $_item->getProductUrl() ?>">
                         <img class="product-image image img-responsive lightborder"
                              src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(200); ?>"
